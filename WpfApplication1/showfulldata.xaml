@@ -1,0 +1,15 @@
+﻿<Window x:Class="WpfApplication1.showfulldata"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="showfulldata" Height="424.211" Width="565.431" AllowsTransparency="True" WindowStyle="None">
+    <Grid>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="426" Margin="0,-2,-0.4,0" VerticalAlignment="Top" Width="566" Source="bin/img/gradient-liquid-abstract-background_52683-60469.jpg" Stretch="Fill"/>
+        <Button x:Name="exitfulldata" Content="خروج" HorizontalAlignment="Left" Height="36" Margin="10,378,0,0" VerticalAlignment="Top" Width="119" Click="exitfulldata_Click"/>
+        <DataGrid x:Name="database" HorizontalAlignment="Left"   Margin="10,65,0,0" VerticalAlignment="Top" Height="276" Width="546" Loaded="dataGrid_Loadedata"/>
+
+    </Grid>
+</Window>

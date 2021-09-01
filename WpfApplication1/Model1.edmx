@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_WbayghaniModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="code">
+          <Key>
+            <PropertyRef Name="tb_Basin" />
+            <PropertyRef Name="tb_Block" />
+            <PropertyRef Name="tb_Property" />
+            <PropertyRef Name="tb_Building" />
+            <PropertyRef Name="name_build" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tb_date" Type="date" Nullable="false" />
+          <Property Name="tb_Basin" Type="int" Nullable="false" />
+          <Property Name="tb_Block" Type="int" Nullable="false" />
+          <Property Name="tb_Property" Type="int" Nullable="false" />
+          <Property Name="tb_Building" Type="int" Nullable="false" />
+          <Property Name="name_build" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Receiver" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="accept" Type="bit" Nullable="false" />
+          <Property Name="file_num" Type="int" />
+        </EntityType>
+        <EntityType Name="namerole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="namerole" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="role" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rrole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rolee" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="table_login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idusername" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="idpassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_namerole_Role">
+          <End Role="rrole" Type="Self.rrole" Multiplicity="1" />
+          <End Role="namerole" Type="Self.namerole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rrole">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="namerole">
+              <PropertyRef Name="role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="G2J" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar(max)">
+          <Parameter Name="intDate" Type="datetime" Mode="In" />
+          <Parameter Name="Format" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <EntityContainer Name="DB_WbayghaniModelStoreContainer">
+          <EntitySet Name="code" EntityType="Self.code" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="namerole" EntityType="Self.namerole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rrole" EntityType="Self.rrole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="table_login" EntityType="Self.table_login" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_namerole_Role" Association="Self.FK_namerole_Role">
+            <End Role="rrole" EntitySet="rrole" />
+            <End Role="namerole" EntitySet="namerole" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_WbayghaniModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="code">
+          <Key>
+            <PropertyRef Name="tb_Basin" />
+            <PropertyRef Name="tb_Block" />
+            <PropertyRef Name="tb_Property" />
+            <PropertyRef Name="tb_Building" />
+            <PropertyRef Name="name_build" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tb_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="tb_Basin" Type="Int32" Nullable="false" />
+          <Property Name="tb_Block" Type="Int32" Nullable="false" />
+          <Property Name="tb_Property" Type="Int32" Nullable="false" />
+          <Property Name="tb_Building" Type="Int32" Nullable="false" />
+          <Property Name="name_build" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Receiver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="accept" Type="Boolean" Nullable="false" />
+          <Property Name="file_num" Type="Int32" />
+        </EntityType>
+        <EntityType Name="namerole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="namerole1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="role" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="rrole" Relationship="Self.FK_namerole_Role" FromRole="namerole" ToRole="rrole" />
+        </EntityType>
+        <EntityType Name="rrole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rolee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="namerole" Relationship="Self.FK_namerole_Role" FromRole="rrole" ToRole="namerole" />
+        </EntityType>
+        <EntityType Name="table_login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idusername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_namerole_Role">
+          <End Role="rrole" Type="Self.rrole" Multiplicity="1" />
+          <End Role="namerole" Type="Self.namerole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rrole">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="namerole">
+              <PropertyRef Name="role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_WbayghaniEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="code" EntityType="Self.code" />
+          <EntitySet Name="namerole" EntityType="Self.namerole" />
+          <EntitySet Name="rrole" EntityType="Self.rrole" />
+          <EntitySet Name="table_login" EntityType="Self.table_login" />
+          <AssociationSet Name="FK_namerole_Role" Association="Self.FK_namerole_Role">
+            <End Role="rrole" EntitySet="rrole" />
+            <End Role="namerole" EntitySet="namerole" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_WbayghaniModelStoreContainer" CdmEntityContainer="DB_WbayghaniEntities">
+          <EntitySetMapping Name="code">
+            <EntityTypeMapping TypeName="DB_WbayghaniModel.code">
+              <MappingFragment StoreEntitySet="code">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tb_date" ColumnName="tb_date" />
+                <ScalarProperty Name="tb_Basin" ColumnName="tb_Basin" />
+                <ScalarProperty Name="tb_Block" ColumnName="tb_Block" />
+                <ScalarProperty Name="tb_Property" ColumnName="tb_Property" />
+                <ScalarProperty Name="tb_Building" ColumnName="tb_Building" />
+                <ScalarProperty Name="name_build" ColumnName="name_build" />
+                <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+                <ScalarProperty Name="accept" ColumnName="accept" />
+                <ScalarProperty Name="file_num" ColumnName="file_num" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="namerole">
+            <EntityTypeMapping TypeName="DB_WbayghaniModel.namerole">
+              <MappingFragment StoreEntitySet="namerole">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="namerole1" ColumnName="namerole" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rrole">
+            <EntityTypeMapping TypeName="DB_WbayghaniModel.rrole">
+              <MappingFragment StoreEntitySet="rrole">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rolee" ColumnName="rolee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="table_login">
+            <EntityTypeMapping TypeName="DB_WbayghaniModel.table_login">
+              <MappingFragment StoreEntitySet="table_login">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idusername" ColumnName="idusername" />
+                <ScalarProperty Name="idpassword" ColumnName="idpassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

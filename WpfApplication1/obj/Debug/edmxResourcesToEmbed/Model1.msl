@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_WbayghaniModelStoreContainer" CdmEntityContainer="DB_WbayghaniEntities">
+    <EntitySetMapping Name="code">
+      <EntityTypeMapping TypeName="DB_WbayghaniModel.code">
+        <MappingFragment StoreEntitySet="code">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tb_date" ColumnName="tb_date" />
+          <ScalarProperty Name="tb_Basin" ColumnName="tb_Basin" />
+          <ScalarProperty Name="tb_Block" ColumnName="tb_Block" />
+          <ScalarProperty Name="tb_Property" ColumnName="tb_Property" />
+          <ScalarProperty Name="tb_Building" ColumnName="tb_Building" />
+          <ScalarProperty Name="name_build" ColumnName="name_build" />
+          <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+          <ScalarProperty Name="accept" ColumnName="accept" />
+          <ScalarProperty Name="file_num" ColumnName="file_num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="namerole">
+      <EntityTypeMapping TypeName="DB_WbayghaniModel.namerole">
+        <MappingFragment StoreEntitySet="namerole">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="namerole1" ColumnName="namerole" />
+          <ScalarProperty Name="role" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rrole">
+      <EntityTypeMapping TypeName="DB_WbayghaniModel.rrole">
+        <MappingFragment StoreEntitySet="rrole">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rolee" ColumnName="rolee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="table_login">
+      <EntityTypeMapping TypeName="DB_WbayghaniModel.table_login">
+        <MappingFragment StoreEntitySet="table_login">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idusername" ColumnName="idusername" />
+          <ScalarProperty Name="idpassword" ColumnName="idpassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_WbayghaniModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="code">
+    <Key>
+      <PropertyRef Name="tb_Basin" />
+      <PropertyRef Name="tb_Block" />
+      <PropertyRef Name="tb_Property" />
+      <PropertyRef Name="tb_Building" />
+      <PropertyRef Name="name_build" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tb_date" Type="date" Nullable="false" />
+    <Property Name="tb_Basin" Type="int" Nullable="false" />
+    <Property Name="tb_Block" Type="int" Nullable="false" />
+    <Property Name="tb_Property" Type="int" Nullable="false" />
+    <Property Name="tb_Building" Type="int" Nullable="false" />
+    <Property Name="name_build" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Receiver" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="accept" Type="bit" Nullable="false" />
+    <Property Name="file_num" Type="int" />
+  </EntityType>
+  <EntityType Name="namerole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="namerole" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="role" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rrole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rolee" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="table_login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idusername" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idpassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_namerole_Role">
+    <End Role="rrole" Type="Self.rrole" Multiplicity="1" />
+    <End Role="namerole" Type="Self.namerole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rrole">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="namerole">
+        <PropertyRef Name="role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="G2J" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar(max)">
+    <Parameter Name="intDate" Type="datetime" Mode="In" />
+    <Parameter Name="Format" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="DB_WbayghaniModelStoreContainer">
+    <EntitySet Name="code" EntityType="Self.code" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="namerole" EntityType="Self.namerole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rrole" EntityType="Self.rrole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="table_login" EntityType="Self.table_login" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_namerole_Role" Association="Self.FK_namerole_Role">
+      <End Role="rrole" EntitySet="rrole" />
+      <End Role="namerole" EntitySet="namerole" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
