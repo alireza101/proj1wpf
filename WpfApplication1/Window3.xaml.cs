@@ -174,12 +174,12 @@ namespace WpfApplication1
                         {
                             if (CB.SelectedIndex.Equals(0))
                             {
-                                cmd = new SqlCommand("INSERT INTO code(tb_Basin,tb_Block,tb_Property,tb_Building,name_build,Receiver,file_num,accept)VALUES(" + Basin.Text.ToString() + "," + Block.Text.ToString() + "," + Property.Text.ToString() + "," + Building.Text.ToString() + ",'" + name.Text.ToString() + "','" + nameCB.Text.ToString() + "'," + parvandenum.Text.ToString() + ","+1+")", con);
+                                cmd = new SqlCommand("INSERT INTO code(tb_Basin,tb_Block,tb_Property,tb_Building,name_build,Receiver,file_num,accept,backtime)VALUES(" + Basin.Text.ToString() + "," + Block.Text.ToString() + "," + Property.Text.ToString() + "," + Building.Text.ToString() + ",'" + name.Text.ToString() + "','" + nameCB.Text.ToString() + "'," + parvandenum.Text.ToString() + ","+1+ ",[dbo].[G2J](getdate(),'Saal/Maah/Rooz'))", con);
 
                             }
                             else
                             {
-                                cmd = new SqlCommand("INSERT INTO code(tb_Basin,tb_Block,tb_Property,tb_Building,name_build,Receiver,file_num,accept)VALUES(" + Basin.Text.ToString() + "," + Block.Text.ToString() + "," + Property.Text.ToString() + "," + Building.Text.ToString() + ",'" + name.Text.ToString() + "','" + CBname.Text.ToString() + "'," + parvandenum.Text.ToString() +","+1+ ")", con);
+                                cmd = new SqlCommand("INSERT INTO code(tb_Basin,tb_Block,tb_Property,tb_Building,name_build,Receiver,file_num,accept,backtime)VALUES(" + Basin.Text.ToString() + "," + Block.Text.ToString() + "," + Property.Text.ToString() + "," + Building.Text.ToString() + ",'" + name.Text.ToString() + "','" + CBname.Text.ToString() + "'," + parvandenum.Text.ToString() +","+1 + ",[dbo].[G2J](getdate(),'Saal/Maah/Rooz'))", con);
                             }
                         }
                         else
@@ -213,6 +213,7 @@ namespace WpfApplication1
             {
                 MessageBox.Show(ex.ToString());
             }
+            checkBox.IsChecked=false;
         }
 
         private void CB_SelectionChanged(object sender, SelectionChangedEventArgs e)

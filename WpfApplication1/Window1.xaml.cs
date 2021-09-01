@@ -117,29 +117,29 @@ namespace WpfApplication1
                 if (Basin.Text.ToString() == "")
                 {
 
-                    quary = "SELECT N'تاریخ'=tb_date,N'حوضه'=tb_Basin,N'بلوک'=tb_Block,N'ملک'=tb_Property,N'اپارتمان'=tb_Building,N'نام مالک'=name_build,N'گیرنده'=Receiver ,N'شماره پرونده'=file_num FROM code WHERE accept=0 ORDER BY tb_date DESC";
+                    quary = "SELECT N'تاریخ'=tb_date,N'حوضه'=tb_Basin,N'بلوک'=tb_Block,N'ملک'=tb_Property,N'اپارتمان'=tb_Building,N'نام مالک'=name_build,N'گیرنده'=Receiver ,N'شماره پرونده'=file_num,N'تاریخ بازگشت'=backtime FROM code WHERE accept=0 ORDER BY tb_date DESC";
                 }
                 else
                 if (Block.Text.ToString() == "")
                 {
-                    quary = "SELECT N'تاریخ'=tb_date,N'حوضه'=tb_Basin,N'بلوک'=tb_Block,N'ملک'=tb_Property,N'اپارتمان'=tb_Building,N'نام مالک'=name_build,N'گیرنده'=Receiver ,N'شماره پرونده'=file_num FROM code WHERE tb_Basin = @ba and accept=0 ORDER BY tb_date DESC";
+                    quary = "SELECT N'تاریخ'=tb_date,N'حوضه'=tb_Basin,N'بلوک'=tb_Block,N'ملک'=tb_Property,N'اپارتمان'=tb_Building,N'نام مالک'=name_build,N'گیرنده'=Receiver ,N'شماره پرونده'=file_num,N'تاریخ بازگشت'=backtime FROM code WHERE tb_Basin = @ba and accept=0 ORDER BY tb_date DESC";
 
                 }
                 else
                  if (Property.Text.ToString() == "")
                 {
-                    quary = "SELECT N'تاریخ'=tb_date,N'حوضه'=tb_Basin,N'بلوک'=tb_Block,N'ملک'=tb_Property,N'اپارتمان'=tb_Building,N'نام مالک'=name_build,N'گیرنده'=Receiver ,N'شماره پرونده'=file_num FROM code WHERE tb_Basin = @ba AND tb_Block = @bl and accept=0 ORDER BY tb_date DESC";
+                    quary = "SELECT N'تاریخ'=tb_date,N'حوضه'=tb_Basin,N'بلوک'=tb_Block,N'ملک'=tb_Property,N'اپارتمان'=tb_Building,N'نام مالک'=name_build,N'گیرنده'=Receiver ,N'شماره پرونده'=file_num ,N'تاریخ بازگشت'=backtime FROM code WHERE tb_Basin = @ba AND tb_Block = @bl and accept=0 ORDER BY tb_date DESC";
 
                 }
                 else
                 if (Building.Text.ToString() == "")
                 {
-                    quary = "SELECT N'تاریخ'=tb_date,N'حوضه'=tb_Basin,N'بلوک'=tb_Block,N'ملک'=tb_Property,N'اپارتمان'=tb_Building,N'نام مالک'=name_build,N'گیرنده'=Receiver ,N'شماره پرونده'=file_num FROM code WHERE tb_Basin = @ba AND tb_Block = @bl AND tb_Property = @p and accept=0 ORDER BY tb_date DESC";
+                    quary = "SELECT N'تاریخ'=tb_date,N'حوضه'=tb_Basin,N'بلوک'=tb_Block,N'ملک'=tb_Property,N'اپارتمان'=tb_Building,N'نام مالک'=name_build,N'گیرنده'=Receiver ,N'شماره پرونده'=file_num ,N'تاریخ بازگشت'=backtime FROM code WHERE tb_Basin = @ba AND tb_Block = @bl AND tb_Property = @p and accept=0 ORDER BY tb_date DESC";
 
                 }
                 else
                 {
-                    quary = "SELECT N'تاریخ'=tb_date,N'حوضه'=tb_Basin,N'بلوک'=tb_Block,N'ملک'=tb_Property,N'اپارتمان'=tb_Building,N'نام مالک'=name_build,N'گیرنده'=Receiver ,N'شماره پرونده'=file_num FROM code WHERE tb_Basin = @ba AND tb_Block = @bl AND tb_Property = @p AND tb_Building=@bu and accept=0 ORDER BY tb_date DESC";
+                    quary = "SELECT N'تاریخ'=tb_date,N'حوضه'=tb_Basin,N'بلوک'=tb_Block,N'ملک'=tb_Property,N'اپارتمان'=tb_Building,N'نام مالک'=name_build,N'گیرنده'=Receiver ,N'شماره پرونده'=file_num ,N'تاریخ بازگشت'=backtime FROM code WHERE tb_Basin = @ba AND tb_Block = @bl AND tb_Property = @p AND tb_Building=@bu and accept=0 ORDER BY tb_date DESC";
 
                 }
 
@@ -160,7 +160,7 @@ namespace WpfApplication1
             {
                 con.Open();
                 String quary = "";
-                quary = " SELECT N'تاریخ' = tb_date,N'حوضه' = tb_Basin,N'بلوک' = tb_Block,N'ملک' = tb_Property,N'اپارتمان' = tb_Building,N'نام مالک' = name_build,N'گیرنده' = Receiver ,N'شماره پرونده'=file_num FROM code WHERE name_build LIKE '%" + nameM.Text.ToString() + "%' and accept=0 ORDER BY tb_date DESC";
+                quary = " SELECT N'تاریخ' = tb_date,N'حوضه' = tb_Basin,N'بلوک' = tb_Block,N'ملک' = tb_Property,N'اپارتمان' = tb_Building,N'نام مالک' = name_build,N'گیرنده' = Receiver ,N'شماره پرونده'=file_num,N'تاریخ بازگشت'=backtime FROM code WHERE name_build LIKE '%" + nameM.Text.ToString() + "%' and accept=0 ORDER BY tb_date DESC";
                 cmd = new SqlCommand(quary, con);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -173,7 +173,7 @@ namespace WpfApplication1
             {
                 con.Open();
                 String quary = "";
-                quary = " SELECT N'تاریخ' = tb_date,N'حوضه' = tb_Basin,N'بلوک' = tb_Block,N'ملک' = tb_Property,N'اپارتمان' = tb_Building,N'نام مالک' = name_build,N'گیرنده' = Receiver ,N'شماره پرونده'=file_num FROM code WHERE file_num LIKE '%" + parvande.Text.ToString() + "%' and accept=0 ORDER BY tb_date DESC";
+                quary = " SELECT N'تاریخ' = tb_date,N'حوضه' = tb_Basin,N'بلوک' = tb_Block,N'ملک' = tb_Property,N'اپارتمان' = tb_Building,N'نام مالک' = name_build,N'گیرنده' = Receiver ,N'شماره پرونده'=file_num ,N'تاریخ بازگشت'=backtime FROM code WHERE file_num LIKE '%" + parvande.Text.ToString() + "%' and accept=0 ORDER BY tb_date DESC";
                 cmd = new SqlCommand(quary, con);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -221,7 +221,7 @@ namespace WpfApplication1
             try
             {
                 con.Open();
-                cmd = new SqlCommand("SELECT N'تاریخ'=tb_date,N'حوضه'=tb_Basin,N'بلوک'=tb_Block,N'ملک'=tb_Property,N'اپارتمان'=tb_Building,N'نام مالک'=name_build,N'گیرنده'=Receiver ,N'شماره پرونده'=file_num FROM code where accept=0 ORDER BY tb_date DESC", con);
+                cmd = new SqlCommand("SELECT N'تاریخ'=tb_date,N'حوضه'=tb_Basin,N'بلوک'=tb_Block,N'ملک'=tb_Property,N'اپارتمان'=tb_Building,N'نام مالک'=name_build,N'گیرنده'=Receiver ,N'شماره پرونده'=file_num ,N'تاریخ بازگشت'=backtime FROM code where accept=0 ORDER BY tb_date DESC", con);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -324,7 +324,7 @@ namespace WpfApplication1
                 case MessageBoxResult.Yes:
 
                         con.Open();
-                        string quary = "UPDATE code SET accept=1 WHERE tb_Basin = @ba AND tb_Block = @bl AND tb_Property = @p AND tb_Building=@bu  AND file_num=@falnum ";
+                        string quary = "UPDATE code SET accept=1 ,backtime=[dbo].[G2J](getdate(),'Saal/Maah/Rooz') WHERE tb_Basin = @ba AND tb_Block = @bl AND tb_Property = @p AND tb_Building=@bu  AND file_num=@falnum ";
                         cmd = new SqlCommand(quary, con);
                         cmd.Parameters.AddWithValue("@ba", getgrid["حوضه"].ToString());
                         cmd.Parameters.AddWithValue("@bl", getgrid["بلوک"].ToString());

@@ -2,11 +2,7 @@
 <Schema Namespace="DB_WbayghaniModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="code">
     <Key>
-      <PropertyRef Name="tb_Basin" />
-      <PropertyRef Name="tb_Block" />
-      <PropertyRef Name="tb_Property" />
-      <PropertyRef Name="tb_Building" />
-      <PropertyRef Name="name_build" />
+      <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="tb_date" Type="date" Nullable="false" />
@@ -18,6 +14,7 @@
     <Property Name="Receiver" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="accept" Type="bit" Nullable="false" />
     <Property Name="file_num" Type="int" />
+    <Property Name="backtime" Type="date" />
   </EntityType>
   <EntityType Name="namerole">
     <Key>

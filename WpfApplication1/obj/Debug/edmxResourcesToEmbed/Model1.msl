@@ -14,6 +14,7 @@
           <ScalarProperty Name="Receiver" ColumnName="Receiver" />
           <ScalarProperty Name="accept" ColumnName="accept" />
           <ScalarProperty Name="file_num" ColumnName="file_num" />
+          <ScalarProperty Name="backtime" ColumnName="backtime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

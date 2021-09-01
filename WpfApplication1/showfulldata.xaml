@@ -8,7 +8,7 @@
         Title="showfulldata" Height="424.211" Width="565.431" AllowsTransparency="True" WindowStyle="None">
     <Grid>
         <Image x:Name="image" HorizontalAlignment="Left" Height="426" Margin="0,-2,-0.4,0" VerticalAlignment="Top" Width="566" Source="bin/img/gradient-liquid-abstract-background_52683-60469.jpg" Stretch="Fill"/>
-        <Button x:Name="exitfulldata" Content="خروج" HorizontalAlignment="Left" Height="36" Margin="10,378,0,0" VerticalAlignment="Top" Width="119" Click="exitfulldata_Click"/>
+        <Button x:Name="exitfulldata" Content="خروج" Background="#FFAA00E4" HorizontalAlignment="Left" Height="36" Margin="10,378,0,0" VerticalAlignment="Top" Width="119" Click="exitfulldata_Click"/>
         <DataGrid x:Name="database" HorizontalAlignment="Left"   Margin="10,65,0,0" VerticalAlignment="Top" Height="276" Width="546" Loaded="dataGrid_Loadedata"/>
 
     </Grid>

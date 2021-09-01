@@ -9,7 +9,7 @@
     <Grid x:Name="no_name">
         <Image x:Name="image" HorizontalAlignment="Left" Height="482" Margin="0,0,-81.8,-0.4" VerticalAlignment="Top" Width="849" Source="bin/img/colorful-abstract-background-with-memphis-elements_23-2148468895.jpg" Stretch="Fill"/>
         <Button x:Name="btnsearch" Content="جست و جو" Margin="69,109,0,0" Background="#FFAA00E4" Click="btnsearch_Click" HorizontalAlignment="Left" Width="100" Height="30" VerticalAlignment="Top"/>
-        <Button x:Name="manager" Content="مدیریت کاربری" Margin="0,437,568.2,9.6" Background="#FFAA00E4"  HorizontalAlignment="Right" Width="94" Click="manager_Click"/>
+        <Button x:Name="manager" Content="مدیریت کاربری" Margin="0,437,550.2,9.6" Background="#FFAA00E4"  HorizontalAlignment="Right" Width="94" Click="manager_Click"/>
         <Button x:Name="btnexit" Content="خروج" Margin="10,0,0,9.6" BorderThickness="1" Background="#FFAA00E4" Click="exit_Click" HorizontalAlignment="Left" Width="95" Height="35" VerticalAlignment="Bottom"/>
         <TextBox x:Name="nameM" HorizontalAlignment="Left" Height="21" Margin="458,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
         <TextBox x:Name="Basin" PreviewTextInput="NumberValidationTextBox1" HorizontalAlignment="Left" Height="20" Margin="353,28,0,0" VerticalAlignment="Top" Width="61"  />
@@ -18,7 +18,7 @@
         <TextBox x:Name="Building" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Height="20" Margin="551,28,0,0" VerticalAlignment="Top" Width="61"/>
         <Label x:Name="label" Content=":کد نوسازی" HorizontalAlignment="Left" Height="28" Margin="617,20,0,0" VerticalAlignment="Top" Width="83"/>
         <Label x:Name="label_Copy" Content=":نام مالک" HorizontalAlignment="Left" Height="28" Margin="617,57,0,0" VerticalAlignment="Top" Width="83"/>
-        <DataGrid x:Name="database" HorizontalAlignment="Left"   Margin="69,161,0,0" VerticalAlignment="Top" Height="238" Width="622" Loaded="dataGrid_Loaded" MouseDoubleClick="database_SelectedCellsChanged" />
+        <DataGrid x:Name="database" HorizontalAlignment="Left"   Margin="47,161,0,0" VerticalAlignment="Top" Height="238" Width="680" Loaded="dataGrid_Loaded" MouseDoubleClick="database_SelectedCellsChanged" />
         <Button x:Name="entpa" Content="ثبت پرونده" HorizontalAlignment="Left" Background="#FFAA00E4" Height="30" Margin="69,74,0,0" VerticalAlignment="Top" Width="100" Click="entpa_Click"/>
         <RadioButton x:Name="r1"  HorizontalAlignment="Left" Height="20" Margin="710,28,0,0" VerticalAlignment="Top" Width="27" Checked="r1_Checked"/>
         <RadioButton x:Name="r2"  HorizontalAlignment="Left" Height="20" Margin="710,65,0,0" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.296,2.795" Checked="r1_Checked"/>
