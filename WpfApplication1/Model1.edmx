@@ -7,11 +7,7 @@
       <Schema Namespace="DB_WbayghaniModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="code">
           <Key>
-            <PropertyRef Name="tb_Basin" />
-            <PropertyRef Name="tb_Block" />
-            <PropertyRef Name="tb_Property" />
-            <PropertyRef Name="tb_Building" />
-            <PropertyRef Name="name_build" />
+            <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tb_date" Type="date" Nullable="false" />
@@ -23,6 +19,7 @@
           <Property Name="Receiver" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="accept" Type="bit" Nullable="false" />
           <Property Name="file_num" Type="int" />
+          <Property Name="backtime" Type="date" />
         </EntityType>
         <EntityType Name="namerole">
           <Key>
@@ -80,11 +77,7 @@
       <Schema Namespace="DB_WbayghaniModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="code">
           <Key>
-            <PropertyRef Name="tb_Basin" />
-            <PropertyRef Name="tb_Block" />
-            <PropertyRef Name="tb_Property" />
-            <PropertyRef Name="tb_Building" />
-            <PropertyRef Name="name_build" />
+            <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="tb_date" Type="DateTime" Nullable="false" Precision="0" />
@@ -96,6 +89,7 @@
           <Property Name="Receiver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="accept" Type="Boolean" Nullable="false" />
           <Property Name="file_num" Type="Int32" />
+          <Property Name="backtime" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="namerole">
           <Key>
@@ -163,6 +157,7 @@
                 <ScalarProperty Name="Receiver" ColumnName="Receiver" />
                 <ScalarProperty Name="accept" ColumnName="accept" />
                 <ScalarProperty Name="file_num" ColumnName="file_num" />
+                <ScalarProperty Name="backtime" ColumnName="backtime" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

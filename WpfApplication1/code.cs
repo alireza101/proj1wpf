@@ -24,5 +24,6 @@ namespace WpfApplication1
         public string Receiver { get; set; }
         public bool accept { get; set; }
         public Nullable<int> file_num { get; set; }
+        public Nullable<System.DateTime> backtime { get; set; }
     }
 }
