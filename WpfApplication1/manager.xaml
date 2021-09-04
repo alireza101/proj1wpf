@@ -1,0 +1,15 @@
+﻿<Window x:Class="WpfApplication1.manager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="manager" Height="300" Width="306">
+    <Grid>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="272" Margin="0,1,0,-0.2" VerticalAlignment="Top" Width="301" Source="bin/img/gradient-liquid-abstract-background_23-2148922971.jpg" Stretch="Fill"/>
+        <Button x:Name="button" Content="تغییر کاربری" Margin="100,90,100,146.8" Background="#FF9323A9" Click="button_Click"/>
+        <Button x:Name="button_Copy" Content="اضافه کردن کاربر" Margin="100,151,100,85.8" Background="#FF9323A9" Click="button_Copy_Click"/>
+
+    </Grid>
+</Window>

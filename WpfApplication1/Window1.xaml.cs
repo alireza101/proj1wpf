@@ -52,14 +52,14 @@ namespace WpfApplication1
             //txt_TitleEmp.Text = employees[0].EmpTitle;
             con.Open();
             String quary = "";
-            quary = "select top 1 * from table_login";
+            quary = "select  LOWER(idusername),LOWER(idpassword) from table_login where id =1";
             cmd = new SqlCommand(quary, con);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt1);
             //string pass=dt1.Columns[2].ToString();
             //string nam = dt1.Columns[1].ToString();
-            string nam = dt1.Rows[0].Field<string>(1);
-            string pass = dt1.Rows[0].Field<string>(2);
+            string nam = dt1.Rows[0].Field<string>(0);
+            string pass = dt1.Rows[0].Field<string>(1);
             cmd.Dispose();
             con.Close();
             dt.Clear();
@@ -346,7 +346,8 @@ namespace WpfApplication1
 
         private void manager_Click(object sender, RoutedEventArgs e)
         {
-
+            manager win3 = new manager();
+            win3.Show();
         }
 
       

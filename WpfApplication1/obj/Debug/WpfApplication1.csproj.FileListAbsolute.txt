@@ -23,3 +23,9 @@ C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplicat
 C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\Window3.baml
 C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\showfulldata.g.cs
 C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\showfulldata.baml
+C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\adduser.g.cs
+C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\changeuser.g.cs
+C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\manager.g.cs
+C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\adduser.baml
+C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\changeuser.baml
+C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\manager.baml

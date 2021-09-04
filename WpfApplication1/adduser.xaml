@@ -1,0 +1,19 @@
+﻿<Window x:Class="WpfApplication1.adduser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="adduser" Height="204.238" Width="322.723">
+    <Grid>
+        <Image x:Name="image" Margin="0,0,0,0" Source="bin/img/137362.jpg" Stretch="Fill"/>
+        <Label x:Name="label" Content=":نام کاربری " HorizontalAlignment="Left" Height="32" Margin="243,37,0,0" VerticalAlignment="Top" Width="65"/>
+        <Label x:Name="label_Copy" Content=":رمز عبور" HorizontalAlignment="Left" Height="32" Margin="243,91,0,0" VerticalAlignment="Top" Width="65"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="32" Margin="108,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="28" Margin="108,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99"/>
+        <Button x:Name="button" Content="خروج" HorizontalAlignment="Left" Height="25" Margin="10,91,0,0" VerticalAlignment="Top" Width="58" Click="button_Click" Background="#FF37419C"/>
+        <Button x:Name="button_Copy" Content="ذخیره" HorizontalAlignment="Left" Height="25" Margin="10,52,0,0" VerticalAlignment="Top" Width="58" Background="#FF37419C" Click="button_Copy_Click"/>
+
+    </Grid>
+</Window>
