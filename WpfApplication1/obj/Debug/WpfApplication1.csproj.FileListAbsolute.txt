@@ -29,3 +29,7 @@ C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplicat
 C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\adduser.baml
 C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\changeuser.baml
 C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\manager.baml
+C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.exe.manifest
+C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.application
+C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.exe.manifest
+C:\Users\mohse\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.application
